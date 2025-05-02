@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#allbox {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.box:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+#reset{
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    
+}
+#reset:hover {
+    background-color: #131413;
+    transform: scale(1.05);
+}
+#message {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: #333;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
