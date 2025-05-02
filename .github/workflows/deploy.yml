@@ -1,9 +1,19 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
       - main
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -12,14 +22,22 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
+      
     - name: Setup Pages
       uses: actions/configure-pages@v3
-
+      
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: github-pages
+        path: .
+        
     - name: Upload site to GitHub Pages
       uses: actions/upload-pages-artifact@v2
       with:
-        path: .  # path to your site files (e.g., your root folder or subfolder)
-
+        path: .  # path to your site files
+        
     - name: Deploy site
       uses: actions/deploy-pages@v2
+      with:
+        token: ${{ github.token }}
