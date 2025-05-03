@@ -34,9 +34,9 @@ for(let box of boxes){
             }
             count++
             if(count>=9 && gameOver!=true){
-                winMsg.textContent=`Draw ${count} ${gameOver}`
+                winMsg.textContent=`Draw`
                 winMsg.style.display="flex"
-                 gameOver=true
+                gameOver=true
             }
         }
     
